@@ -1,7 +1,7 @@
 package com.company;
 
 public class Artifact {
-    private int artifactID;
+    private String artifactID;
     private String artifactName;
     private String artifactCountry;
     private Stakeholder currOwner;
@@ -16,11 +16,11 @@ public class Artifact {
                 '}';
     }
 
-    public int getArtifactID() {
+    public String getArtifactID() {
         return artifactID;
     }
 
-    public void setArtifactID(int artifactID) {
+    public void setArtifactID(String artifactID) {
         this.artifactID = artifactID;
     }
 

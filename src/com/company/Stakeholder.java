@@ -1,7 +1,7 @@
 package com.company;
 
 public class Stakeholder {
-    private int holderID;
+    private String holderID;
     private String holderName;
     private String holderAddress;
     private double holderBalance;
@@ -16,11 +16,11 @@ public class Stakeholder {
                 '}';
     }
 
-    public int getIdNumber() {
+    public String getIdNumber() {
         return holderID;
     }
 
-    public void setIdNumber(int idNumber) {
+    public void setIdNumber(String idNumber) {
         this.holderID = idNumber;
     }
 

@@ -4,7 +4,6 @@ import java.time.LocalDateTime;
 
 public class Transaction {
     private Artifact artifact;
-    // fixme timestamp needs to include more info
     private LocalDateTime timestamp;
     private Stakeholder seller;
     private Stakeholder buyer;
