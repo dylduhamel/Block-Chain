@@ -1,11 +1,14 @@
 package com.company;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Main {
 
+    public static ArrayList<Block> blockchain = new ArrayList<>();
+
     public static void main(String[] args) {
-        ArrayList<Block> blockchain = new ArrayList<>();
+
     }
 }
 

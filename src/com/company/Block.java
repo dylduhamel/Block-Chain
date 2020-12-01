@@ -3,6 +3,7 @@ package com.company;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 public class Block {
     private String previousHash;
@@ -21,24 +22,56 @@ public class Block {
 
     public boolean TreatySC(Transaction t) {
 
+        ArrayList<Transaction> treatyTrans = retrieveProvenance(t.getArtifact().getArtifactID(), 2001);
+
+        if (treatyTrans.size() <= 2) {
+            return false;
+        } else if (t.getBuyer().getHolderBalance() < t.getPrice()){
+            return false;
+        } else {
+            t.getAuctionHouse().setHolderBalance(t.getAuctionHouse().getHolderBalance() + t.getPrice() * 0.10);
+            t.getArtifact().getArtifactCountry().setHolderBalance(t.getArtifact().getArtifactCountry().getHolderBalance() + t.getPrice() * 0.2);
+            t.getSeller().setHolderBalance(t.getSeller().getHolderBalance() + t.getPrice() * 0.7);
+            return true;
+        }
     }
 
-    public int retrieveProvenance(String id) {
-        if (data.getArtifact().getArtifactID().equals(id)) {
+    public ArrayList<Transaction> retrieveProvenance(String id) {
+        ArrayList<Transaction> blockTran = new ArrayList<>();
 
+        if (Main.blockchain.size() != 0) {
+            for (int i = 0; i < Main.blockchain.size(); i++) {
+                if (Main.blockchain.get(i).getData().getArtifact().getArtifactID().equals(id)) {
+                    blockTran.add(Main.blockchain.get(i).getData());
+                }
+            }
         }
+        return blockTran;
+    }
+    public ArrayList<Transaction> retrieveProvenance(String id, long timeStamp) {
+        ArrayList<Transaction> blockTran = new ArrayList<>();
+        if (Main.blockchain.size() != 0) {
+            for (int i = 0; i < Main.blockchain.size(); i++) {
+                if (Main.blockchain.get(i).getData().getArtifact().getArtifactID().equals(id) && Main.blockchain.get(i).getData().getTimestamp().getYear() > timeStamp) {
+                    blockTran.add(Main.blockchain.get(i).getData());
+                }
+            }
+        }
+        return blockTran;
     }
 
     public String mineBlock(int prefix) {
-        // add the Treaty method
+        if (TreatySC(this.getData())) {
+            String prefixString = new String(new char[prefix]).replace('\0', '0'); // creating the difficulty of the hash to be mined
 
-        String prefixString = new String(new char[prefix]).replace('\0', '0'); // creating the difficulty of the hash to be mined
-
-        while (!hash.substring(0, prefix).equals(prefixString)) { // brute force to crack the hash
-            nonce++;
-            hash = calculateBlockHash();
+            while (!hash.substring(0, prefix).equals(prefixString)) { // brute force to crack the hash
+                nonce++;
+                hash = calculateBlockHash();
+            }
+            return hash;
+        } else {
+            return "Transaction does not meet the stakeholders agreement";
         }
-        return hash;
     }
 
     public String calculateBlockHash() {

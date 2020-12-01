@@ -3,7 +3,7 @@ package com.company;
 public class Artifact {
     private String artifactID;
     private String artifactName;
-    private String artifactCountry;
+    private Stakeholder artifactCountry;
     private Stakeholder currOwner;
 
     @Override
@@ -32,11 +32,11 @@ public class Artifact {
         this.artifactName = artifactName;
     }
 
-    public String getArtifactCountry() {
+    public Stakeholder getArtifactCountry() {
         return artifactCountry;
     }
 
-    public void setArtifactCountry(String artifactCountry) {
+    public void setArtifactCountry(Stakeholder artifactCountry) {
         this.artifactCountry = artifactCountry;
     }
 
