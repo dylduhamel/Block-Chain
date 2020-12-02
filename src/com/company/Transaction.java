@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 public class Transaction {
     private Artifact artifact;
-    private LocalDateTime timestamp;
+    private LocalDateTime timestamp; // FIXME
     private Stakeholder seller;
     private Stakeholder buyer;
     private Stakeholder auctionHouse;
