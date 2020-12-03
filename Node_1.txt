@@ -1,0 +1,7 @@
+Node_1
+Artifact{artifactID=58367561, artifactName='Mona Lisa', artifactCountry='Stakeholder{idNumber=19583, holderName='America', holderAddress='North America', holderBalance=500000.0}', currOwner=Stakeholder{idNumber=23894, holderName='Dylan Duhamel', holderAddress='4518 35th St North', holderBalance=6786.0}}
+2020-12-02T19:04:16.685703300
+Stakeholder{idNumber=17893257, holderName='Matt Zamp', holderAddress='1220 Kress Dr', holderBalance=56321.0}
+Stakeholder{idNumber=89012365, holderName='Nick Barsanti', holderAddress='1573 North Pelham St', holderBalance=3421.0}
+Stakeholder{idNumber=45671204, holderName='Media Sellers', holderAddress='567 West 45th St', holderBalance=678231.0}
+3423.0
