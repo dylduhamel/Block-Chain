@@ -9,21 +9,55 @@ import java.util.Date;
 
 public class Main {
 
-    public static ArrayList<Block> blockchain = new ArrayList<>();
+    public static ArrayList<Block> blockchain = new ArrayList<>(); // storing each block
 
     public static void main(String[] args) {
         int prefix = 4;   //we want our hash to start with four zeroes
         String prefixString = new String(new char[prefix]).replace('\0', '0');
 
+
+        // first block
         Transaction firstTransaction = new Transaction();
         userFillTransaction(firstTransaction);
         Block genesisBlock = new Block(firstTransaction, "0", new Date().getTime());
-        blockchain.add(genesisBlock);
         genesisBlock.mineBlock(prefix);
         blockTextOutput(genesisBlock, 1);
+        if (verify_Blockchain(blockchain) ) {
+            blockchain.add(genesisBlock);
+        } else {
+            System.out.println("Malicious block, not added to the chain");
+        }
+
+        // second block
+        Transaction secondTransaction = new Transaction();
+
+
 
 
     }
+    public static boolean verify_Blockchain(ArrayList<Block> BC) {
+        // criteria for hash prefix
+        int prefix = 4;   //we want our hash to start with four zeroes
+        String prefixString = new String(new char[prefix]).replace('\0', '0');
+
+        // blocks to be checked
+        Block currBlock;
+        Block prevBlock;
+
+        for (int i = 1; i < blockchain.size(); i++) {
+            currBlock = blockchain.get(i);
+            prevBlock = blockchain.get(i - 1);
+
+            if (!currBlock.getHash().equals(currBlock.calculateBlockHash()) || !prevBlock.getHash().equals(prevBlock.calculateBlockHash()) || !currBlock.getHash().substring(0, prefix).equals(prefixString)) {
+                System.out.println("Inconsistent hashes");
+                return false;
+            }
+
+        }
+        return true;
+    }
+
+
     public static void userFillTransaction(Transaction t) {
 
         // making an artifact
@@ -53,7 +87,7 @@ public class Main {
         t.setArtifact(userArt);
 
         // setting time
-        t.setTimestamp(LocalDateTime.now());
+        t.setTimestamp(2018);
 
 
         // making a new seller

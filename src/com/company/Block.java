@@ -24,6 +24,11 @@ public class Block {
 
         ArrayList<Transaction> treatyTrans = retrieveProvenance(t.getArtifact().getArtifactID(), 2001);
 
+        // certification for blockchain <=2
+        if (Main.blockchain.size() <= 2) {
+            return true;
+        }
+
         if (treatyTrans.size() <= 2) {
             return false;
         } else if (t.getBuyer().getHolderBalance() < t.getPrice()){
@@ -48,11 +53,11 @@ public class Block {
         }
         return blockTran;
     }
-    public ArrayList<Transaction> retrieveProvenance(String id, long timeStamp) {
+    public ArrayList<Transaction> retrieveProvenance(String id, int timeStamp) {
         ArrayList<Transaction> blockTran = new ArrayList<>();
         if (Main.blockchain.size() != 0) {
             for (int i = 0; i < Main.blockchain.size(); i++) {
-                if (Main.blockchain.get(i).getData().getArtifact().getArtifactID().equals(id) && Main.blockchain.get(i).getData().getTimestamp().getYear() > timeStamp) {
+                if (Main.blockchain.get(i).getData().getArtifact().getArtifactID().equals(id) && Main.blockchain.get(i).getData().getTimestamp() > timeStamp) {
                     blockTran.add(Main.blockchain.get(i).getData());
                 }
             }
@@ -70,6 +75,7 @@ public class Block {
             }
             return hash;
         } else {
+            System.out.println("Transaction does not meet the stakeholders agreement");
             return "Transaction does not meet the stakeholders agreement";
         }
     }
@@ -114,7 +120,7 @@ public class Block {
         return timeStamp;
     }
 
-    public void setTimestamp(long timestamp) {
+    public void setTimestamp(int timestamp) {
         this.timeStamp = timestamp;
     }
 

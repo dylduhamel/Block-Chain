@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 public class Transaction {
     private Artifact artifact;
-    private LocalDateTime timestamp; // FIXME
+    private int timestamp;
     private Stakeholder seller;
     private Stakeholder buyer;
     private Stakeholder auctionHouse;
@@ -30,11 +30,11 @@ public class Transaction {
         this.artifact = artifact;
     }
 
-    public LocalDateTime getTimestamp() {
+    public int getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(LocalDateTime timestamp) {
+    public void setTimestamp(int timestamp) {
         this.timestamp = timestamp;
     }
 
