@@ -1,7 +1,7 @@
 package com.company;
 
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
+import java.io.FileOutputStream; 
 import java.io.PrintWriter;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -17,9 +17,10 @@ public class Main {
 
 
         // first block
-        Transaction firstTransaction = new Transaction();
-        userFillTransaction(firstTransaction);
-        Block genesisBlock = new Block(firstTransaction, "0", new Date().getTime());
+        BlockForum genesisForum = new BlockForum();
+        //userFillTransaction(firstTransaction);
+
+        Block genesisBlock = new Block(genesisForum.getFillTrans(), "0", new Date().getTime());
         genesisBlock.mineBlock(prefix);
         blockTextOutput(genesisBlock, 1);
         if (verify_Blockchain(blockchain) ) {
