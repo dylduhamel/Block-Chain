@@ -15,11 +15,9 @@ public class Main {
         int prefix = 4;   //we want our hash to start with four zeroes
         String prefixString = new String(new char[prefix]).replace('\0', '0');
 
-
         // first block
         BlockForum genesisForum = new BlockForum();
-        //userFillTransaction(firstTransaction);
-
+        // making node
         Block genesisBlock = new Block(genesisForum.getFillTrans(), "0", new Date().getTime());
         genesisBlock.mineBlock(prefix);
         blockTextOutput(genesisBlock, 1);
@@ -30,8 +28,16 @@ public class Main {
         }
 
         // second block
-        Transaction secondTransaction = new Transaction();
-
+        BlockForum secondForum = new BlockForum();
+        // making node
+        Block secondBlock = new Block(secondForum.getFillTrans(), genesisBlock.getHash(), new Date().getTime());
+        secondBlock.mineBlock(prefix);
+        blockTextOutput(secondBlock, 2);
+        if (verify_Blockchain(blockchain) ) {
+            blockchain.add(secondBlock);
+        } else {
+            System.out.println("Malicious block, not added to the chain");
+        }
 
 
 

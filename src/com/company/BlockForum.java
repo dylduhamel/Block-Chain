@@ -5,15 +5,13 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class BlockForum implements ActionListener {
-    // moves the program along
-    boolean proceed = false;
+public class BlockForum extends JDialog implements ActionListener {
 
     // transaction class
     Transaction fillTrans = new Transaction();
 
     // frame of text entry
-    JFrame frame = new JFrame();
+    JDialog frame = new JDialog();
     JButton submitButton = new JButton("Submit");
     JLabel titlePage = new JLabel("Blockchain Transaction Forum");
 
@@ -84,6 +82,8 @@ public class BlockForum implements ActionListener {
 
 
     BlockForum() {
+        frame.setModal(true);
+
         // adding title
         titlePage.setBounds(200, 10, 400 , 25);
         titlePage.setFont(new Font("Arial", Font.BOLD, 20 ));
@@ -202,7 +202,7 @@ public class BlockForum implements ActionListener {
         frame.add(artifactName);
 
         // operations for frame
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         frame.setSize(700,950);
         frame.setLayout(null);
         frame.setVisible(true);
@@ -280,7 +280,7 @@ public class BlockForum implements ActionListener {
             // setting transaction price
             fillTrans.setPrice(Double.parseDouble(transPrice.getText()));
 
-            proceed = true;
+            dispose();
         }
     }
 
@@ -292,11 +292,4 @@ public class BlockForum implements ActionListener {
         this.fillTrans = fillTrans;
     }
 
-    public boolean isProceed() {
-        return proceed;
-    }
-
-    public void setProceed(boolean proceed) {
-        this.proceed = proceed;
-    }
 }

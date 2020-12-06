@@ -1,0 +1,7 @@
+Node_2
+Artifact{artifactID=2, artifactName='2', artifactCountry='Stakeholder{idNumber=2, holderName='2', holderAddress='2', holderBalance=2.0}', currOwner=Stakeholder{idNumber=2, holderName='2', holderAddress='2', holderBalance=2.0}}
+2
+Stakeholder{idNumber=2, holderName='2', holderAddress='2', holderBalance=2.0}
+Stakeholder{idNumber=2, holderName='2', holderAddress='2', holderBalance=2.0}
+Stakeholder{idNumber=2, holderName='2', holderAddress='2', holderBalance=2.0}
+2.0
