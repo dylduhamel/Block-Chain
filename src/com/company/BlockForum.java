@@ -83,8 +83,7 @@ public class BlockForum implements ActionListener {
     JButton nextButton = new JButton();
 
 
-    BlockForum() { //(Transaction t)
-        frame.
+    BlockForum() {
         // adding title
         titlePage.setBounds(200, 10, 400 , 25);
         titlePage.setFont(new Font("Arial", Font.BOLD, 20 ));
