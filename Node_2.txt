@@ -1,7 +1,19 @@
 Node_2
-Artifact{artifactID=2, artifactName='2', artifactCountry='Stakeholder{idNumber=2, holderName='2', holderAddress='2', holderBalance=2.0}', currOwner=Stakeholder{idNumber=2, holderName='2', holderAddress='2', holderBalance=2.0}}
-2
-Stakeholder{idNumber=2, holderName='2', holderAddress='2', holderBalance=2.0}
-Stakeholder{idNumber=2, holderName='2', holderAddress='2', holderBalance=2.0}
-Stakeholder{idNumber=2, holderName='2', holderAddress='2', holderBalance=2.0}
-2.0
+
+Artifact Data
+	Artifact{artifactID=789371, artifactName='Red Elephant', artifactCountry='Stakeholder{idNumber=193872, holderName='Russia', holderAddress='Northern Russia', holderBalance=2.3437261E7}', currOwner=Stakeholder{idNumber=867120, holderName='Zar', holderAddress='34 Icy Rd', holderBalance=568782.0}}
+
+Time Stamp
+	2019
+
+Artifact Seller
+	Stakeholder{idNumber=9178378, holderName='Johnathan', holderAddress='Lake road', holderBalance=1242.0}
+
+Artifact Buyer
+	Stakeholder{idNumber=347612, holderName='Sarah', holderAddress='3453 Weary Ct', holderBalance=109432.0}
+
+Artifact Auction House
+	Stakeholder{idNumber=789371, holderName='Red Elephant', holderAddress='3212 Shore rd', holderBalance=23957.0}
+
+Transaction Price
+	1220330.0

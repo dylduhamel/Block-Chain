@@ -1,7 +1,19 @@
 Node_1
-Artifact{artifactID=1, artifactName='1', artifactCountry='Stakeholder{idNumber=1, holderName='1', holderAddress='1', holderBalance=1.0}', currOwner=Stakeholder{idNumber=1, holderName='1', holderAddress='1', holderBalance=1.0}}
-1
-Stakeholder{idNumber=1, holderName='1', holderAddress='1', holderBalance=1.0}
-Stakeholder{idNumber=1, holderName='1', holderAddress='1', holderBalance=1.0}
-Stakeholder{idNumber=1, holderName='1', holderAddress='1', holderBalance=1.0}
-1.0
+
+Artifact Data
+	Artifact{artifactID=968327, artifactName='Mona Lisa', artifactCountry='Stakeholder{idNumber=458375, holderName='USA', holderAddress='North America', holderBalance=1256832.0}', currOwner=Stakeholder{idNumber=687431, holderName='Dylan', holderAddress='3425 45th St', holderBalance=1234.0}}
+
+Time Stamp
+	2020
+
+Artifact Seller
+	Stakeholder{idNumber=779054, holderName='Joe', holderAddress='45 South St', holderBalance=23113.0}
+
+Artifact Buyer
+	Stakeholder{idNumber=668462, holderName='Matt', holderAddress='Wake Forest Rd', holderBalance=3452.0}
+
+Artifact Auction House
+	Stakeholder{idNumber=968327, holderName='Mona Lisa', holderAddress='23 Road Ln', holderBalance=112978.0}
+
+Transaction Price
+	556709.0
