@@ -224,14 +224,25 @@ public class BlockForum extends JDialog implements ActionListener {
             country.setIdNumber(countryID.getText());
             country.setHolderName(countryName.getText());
             country.setHolderAddress(countryAddress.getText());
-            country.setHolderBalance(Double.parseDouble(countryBalance.getText()));
+            try {
+                country.setHolderBalance(Double.parseDouble(countryBalance.getText()));
+            } catch (Exception e1) {
+                System.out.println("The program exited due to wrong variable type. Please enter a double for country balance");
+                System.exit(-1);
+            }
 
             // setting currOwner of artifact
             Stakeholder currOwner = new Stakeholder();
             currOwner.setIdNumber(currOwnerID.getText());
             currOwner.setHolderName(currOwnerName.getText());
             currOwner.setHolderAddress(currOwnerAddress.getText());
-            currOwner.setHolderBalance(Double.parseDouble(currOwnerBalance.getText()));
+            try {
+                currOwner.setHolderBalance(Double.parseDouble(currOwnerBalance.getText()));
+            } catch (Exception e1) {
+                System.out.println("The program exited due to wrong variable type. Please enter a double for current owner balance");
+                System.exit(-1);
+            }
+
 
             // adding country and currOwner to artifact
             userArt.setArtifactCountry(country);
@@ -241,7 +252,13 @@ public class BlockForum extends JDialog implements ActionListener {
             fillTrans.setArtifact(userArt);
 
             // setting time
-            fillTrans.setTimestamp(Integer.parseInt(timeStamp.getText()));
+            try {
+                fillTrans.setTimestamp(Integer.parseInt(timeStamp.getText()));
+            } catch (Exception e1) {
+                System.out.println("The program exited due to wrong variable type. Please enter an integer for time in years");
+                System.exit(-1);
+            }
+
 
 
             // making a new seller
@@ -249,7 +266,12 @@ public class BlockForum extends JDialog implements ActionListener {
             userSeller.setIdNumber(sellerID.getText());
             userSeller.setHolderName(sellerName.getText());
             userSeller.setHolderAddress(sellerAddress.getText());
-            userSeller.setHolderBalance(Double.parseDouble(sellerBalance.getText()));
+            try {
+                userSeller.setHolderBalance(Double.parseDouble(sellerBalance.getText()));
+            } catch (Exception e1) {
+                System.out.println("The program exited due to wrong variable type. Please enter a double for seller balance");
+                System.exit(-1);
+            }
 
             // ADDING SELLER TO TRANSACTION
             fillTrans.setSeller(userSeller);
@@ -260,7 +282,12 @@ public class BlockForum extends JDialog implements ActionListener {
             userBuyer.setIdNumber(buyerID.getText());
             userBuyer.setHolderName(buyerName.getText());
             userBuyer.setHolderAddress(buyerAddress.getText());
-            userBuyer.setHolderBalance(Double.parseDouble(buyerBalance.getText()));
+            try {
+                userBuyer.setHolderBalance(Double.parseDouble(buyerBalance.getText()));
+            } catch (Exception e1) {
+                System.out.println("The program exited due to wrong variable type. Please enter a double for buyer balance");
+                System.exit(-1);
+            }
 
             // ADDING BUYER TO TRANSACTION
             fillTrans.setBuyer(userBuyer);
@@ -271,14 +298,24 @@ public class BlockForum extends JDialog implements ActionListener {
             userAuction.setIdNumber(artifactID.getText());
             userAuction.setHolderName(artifactName.getText());
             userAuction.setHolderAddress(auctionAddress.getText());
-            userAuction.setHolderBalance(Double.parseDouble(auctionBalance.getText()));
+            try {
+                userAuction.setHolderBalance(Double.parseDouble(auctionBalance.getText()));
+            } catch (Exception e1) {
+                System.out.println("The program exited due to wrong variable type. Please enter a double for auction balance");
+                System.exit(-1);
+            }
 
             // ADDING AUCTIONHOUSE TO TRANSACTION
             fillTrans.setAuctionHouse(userAuction);
 
 
             // setting transaction price
-            fillTrans.setPrice(Double.parseDouble(transPrice.getText()));
+            try {
+                fillTrans.setPrice(Double.parseDouble(transPrice.getText()));
+            } catch (Exception e1) {
+                System.out.println("The program exited due to wrong variable type. Please enter a double for transaction price");
+                System.exit(-1);
+            }
 
             dispose();
         }

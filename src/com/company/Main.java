@@ -40,6 +40,19 @@ public class Main {
             System.out.println("Malicious block, not added to the chain");
         }
 
+        // third block
+        BlockForum thirdForum = new BlockForum();
+        // making node
+        Block thirdBlock = new Block(thirdForum.getFillTrans(), secondBlock.getHash(), new Date().getTime());
+        thirdBlock.mineBlock(prefix);
+        writeBlock(thirdBlock, 3);
+        if (verify_Blockchain(blockchain) ) {
+            blockchain.add(thirdBlock);
+        } else {
+            System.out.println("Malicious block, not added to the chain");
+        }
+
+
         // method to print the entire blockchain and keep that info each time
         writeFullBlockchain(blockchain);
     }

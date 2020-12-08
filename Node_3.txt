@@ -1,10 +1,10 @@
-Node_1
+Node_3
 
 Artifact Data
 	Artifact{artifactID=1, artifactName='1', artifactCountry='Stakeholder{idNumber=1, holderName='1', holderAddress='1', holderBalance=1.0}', currOwner=Stakeholder{idNumber=1, holderName='1', holderAddress='1', holderBalance=1.0}}
 
 Time Stamp
-	1
+	2020
 
 Artifact Seller
 	Stakeholder{idNumber=1, holderName='1', holderAddress='1', holderBalance=1.0}

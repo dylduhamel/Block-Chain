@@ -25,11 +25,11 @@ public class Block {
         ArrayList<Transaction> treatyTrans = retrieveProvenance(t.getArtifact().getArtifactID(), 2001);
 
         // certification for blockchain <=2
-        if (Main.blockchain.size() <= 2) {
+        if (Main.blockchain.size() <= 1) {
             return true;
         }
 
-        if (treatyTrans.size() <= 2) {
+        if (treatyTrans.size() < 2) {
             return false;
         } else if (t.getBuyer().getHolderBalance() < t.getPrice()){
             return false;
