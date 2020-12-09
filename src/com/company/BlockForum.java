@@ -6,7 +6,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class BlockForum extends JDialog implements ActionListener {
-
     // transaction class
     Transaction fillTrans = new Transaction();
 
@@ -47,7 +46,7 @@ public class BlockForum extends JDialog implements ActionListener {
     JTextField sellerID = new JTextField();
     JLabel sellerIDLabel = new JLabel("Seller ID#:");
     JTextField sellerName = new JTextField();
-    JLabel sellerNameLabel = new JLabel("Seller name");
+    JLabel sellerNameLabel = new JLabel("Seller name:");
     JTextField sellerAddress = new JTextField();
     JLabel sellerAddressLabel = new JLabel("Seller address:");
     JTextField sellerBalance = new JTextField();
@@ -85,11 +84,11 @@ public class BlockForum extends JDialog implements ActionListener {
         frame.setModal(true);
 
         // adding title
-        titlePage.setBounds(200, 10, 400 , 25);
+        titlePage.setBounds(330, 10, 400 , 25);
         titlePage.setFont(new Font("Arial", Font.BOLD, 20 ));
 
         // adding labels
-        submitButton.setBounds(300, 850,100,25);
+        submitButton.setBounds(420, 440,100,25);
         submitButton.setFocusable(false);
         submitButton.addActionListener(this);
 
@@ -105,18 +104,19 @@ public class BlockForum extends JDialog implements ActionListener {
         currOwnerBalanceLabel.setBounds(50,320,200,25);
         timeStampLabel.setBounds(50,350,200,25);
         sellerIDLabel.setBounds(50,380,200,25);
-        sellerNameLabel.setBounds(50,410,200,25);
-        sellerAddressLabel.setBounds(50,440,200,25);
-        sellerBalanceLabel.setBounds(50,470,200,25);
-        buyerIDLabel.setBounds(50,500,200,25);
-        buyerNameLabel.setBounds(50,530,200,25);
-        buyerAddressLabel.setBounds(50,560,200,25);
-        buyerBalanceLabel.setBounds(50,590,200,25);
-        auctionIDLabel.setBounds(50,620,200,25);
-        auctionNameLabel.setBounds(50,650,200,25);
-        auctionAddressLabel.setBounds(50,680,200,25);
-        auctionBalanceLabel.setBounds(50,710,200,25);
-        transPriceLabel.setBounds(50,740,200,25);
+
+        sellerNameLabel.setBounds(505,50,200,25);
+        sellerAddressLabel.setBounds(505,80,200,25);
+        sellerBalanceLabel.setBounds(505,110,200,25);
+        buyerIDLabel.setBounds(505,140,200,25);
+        buyerNameLabel.setBounds(505,170,200,25);
+        buyerAddressLabel.setBounds(505,200,200,25);
+        buyerBalanceLabel.setBounds(505,230,200,25);
+        auctionIDLabel.setBounds(505,260,200,25);
+        auctionNameLabel.setBounds(505,290,200,25);
+        auctionAddressLabel.setBounds(505,320,200,25);
+        auctionBalanceLabel.setBounds(505,350,200,25);
+        transPriceLabel.setBounds(505,380,200,25);
 
 
         // adding fields
@@ -132,18 +132,19 @@ public class BlockForum extends JDialog implements ActionListener {
         currOwnerBalance.setBounds(200,320,200,25);
         timeStamp.setBounds(200,350,200,25);
         sellerID.setBounds(200,380,200,25);
-        sellerName.setBounds(200,410,200,25);
-        sellerAddress.setBounds(200,440,200,25);
-        sellerBalance.setBounds(200,470,200,25);
-        buyerID.setBounds(200,500,200,25);
-        buyerName.setBounds(200,530,200,25);
-        buyerAddress.setBounds(200,560,200,25);
-        buyerBalance.setBounds(200,590,200,25);
-        auctionID.setBounds(200,620,200,25);
-        auctionName.setBounds(200,650,200,25);
-        auctionAddress.setBounds(200,680,200,25);
-        auctionBalance.setBounds(200,710,200,25);
-        transPrice.setBounds(200,740,200,25);
+
+        sellerName.setBounds(680,50,200,25);
+        sellerAddress.setBounds(680,80,200,25);
+        sellerBalance.setBounds(680,110,200,25);
+        buyerID.setBounds(680,140,200,25);
+        buyerName.setBounds(680,170,200,25);
+        buyerAddress.setBounds(680,200,200,25);
+        buyerBalance.setBounds(680,230,200,25);
+        auctionID.setBounds(680,260,200,25);
+        auctionName.setBounds(680,290,200,25);
+        auctionAddress.setBounds(680,320,200,25);
+        auctionBalance.setBounds(680,350,200,25);
+        transPrice.setBounds(680,380,200,25);
 
 
 
@@ -203,7 +204,8 @@ public class BlockForum extends JDialog implements ActionListener {
 
         // operations for frame
         frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-        frame.setSize(700,950);
+
+        frame.setSize(960,540);
         frame.setLayout(null);
         frame.setVisible(true);
     }
