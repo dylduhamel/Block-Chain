@@ -322,6 +322,7 @@ public class BlockForum extends JDialog implements ActionListener {
             dispose();
         }
     }
+    // getters and setters
 
     public Transaction getFillTrans() {
         return fillTrans;

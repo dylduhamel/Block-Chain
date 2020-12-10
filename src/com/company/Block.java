@@ -20,8 +20,10 @@ public class Block {
         this.hash = calculateBlockHash();
     }
 
+    // treaty agreement for block to be mined
     public boolean TreatySC(Transaction t) {
 
+        // filling an arraylist with transactions after 2001
         ArrayList<Transaction> treatyTrans = retrieveProvenance(t.getArtifact().getArtifactID(), 2001);
 
         // certification for blockchain <=2
@@ -41,6 +43,7 @@ public class Block {
         }
     }
 
+    // getting the artifact for the specific ID
     public ArrayList<Transaction> retrieveProvenance(String id) {
         ArrayList<Transaction> blockTran = new ArrayList<>();
 
@@ -53,6 +56,7 @@ public class Block {
         }
         return blockTran;
     }
+    // getting the artifact for the specific ID and year
     public ArrayList<Transaction> retrieveProvenance(String id, int timeStamp) {
         ArrayList<Transaction> blockTran = new ArrayList<>();
         if (Main.blockchain.size() != 0) {
@@ -65,6 +69,7 @@ public class Block {
         return blockTran;
     }
 
+    // mines the block for the given prefix
     public String mineBlock(int prefix) {
         if (TreatySC(this.getData())) {
             String prefixString = new String(new char[prefix]).replace('\0', '0'); // creating the difficulty of the hash to be mined
@@ -79,7 +84,7 @@ public class Block {
             return "Transaction does not meet the stakeholders agreement";
         }
     }
-
+    // makes the block hash
     public String calculateBlockHash() {
         String dataToHash = previousHash
                 + Long.toString(timeStamp)
